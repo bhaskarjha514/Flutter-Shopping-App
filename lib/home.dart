@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter_ecom/components/horizontal_listview.dart';
 import 'package:flutter_ecom/components/Products.dart';
+import 'package:flutter_ecom/pages/cart.dart';
 
 //class HomePage extends StatelessWidget {
 //  @override
@@ -49,7 +50,9 @@ class _HomePageState extends State<HomePage> {
         title: Text('FashApp'),
         actions: <Widget>[
           new IconButton(icon: Icon(Icons.search, color: Colors.white), onPressed: (){}),
-          new IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white), onPressed: (){})
+          new IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white), onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => new Cart()));
+          })
         ],
       ),
         drawer: new Drawer(
@@ -96,10 +99,12 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder:(context) => new Cart()));
+                },
                 child: ListTile(
-                  title: Text('Categories'),
-                  leading: Icon(Icons.dashboard,color: Colors.lightGreenAccent,),
+                  title: Text('Shopping Cart'),
+                  leading: Icon(Icons.shopping_cart,color: Colors.deepOrange,),
 
                 ),
               ),
