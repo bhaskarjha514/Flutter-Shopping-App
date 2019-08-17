@@ -171,10 +171,39 @@ class _ProductDetailsState extends State<ProductDetails> {
               new IconButton(icon: Icon(Icons.favorite_border),color: Colors.red, onPressed: (){}),
             ],
           ),
-          Divider(color: Colors.red,),
+          Divider(),
           new ListTile(
             title: new Text('Product details'),
             subtitle: new Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."),
+          ),
+          Divider(),
+          new Row(
+            children: <Widget>[
+              Padding(padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: new Text("Product name", style: TextStyle(color: Colors.grey)),),
+              Padding(padding: EdgeInsets.all(5.0),
+              child: new Text(widget.product_detail_name),)
+            ],
+          ),
+
+          new Row(
+            children: <Widget>[
+              Padding(padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: new Text("Product Brand", style: TextStyle(color: Colors.grey)),),
+              // created to product Brand.
+              Padding(padding: EdgeInsets.all(5.0),
+                child: new Text("Brand Versace"),)
+
+            ],
+          ),
+//                    Add the product condition.
+          new Row(
+            children: <Widget>[
+              Padding(padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: new Text("Product Condition", style: TextStyle(color: Colors.grey)),),
+              Padding(padding: EdgeInsets.all(5.0),
+                child: new Text("New"),)
+            ],
           )
         ],
       ),
