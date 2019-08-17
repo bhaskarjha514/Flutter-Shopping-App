@@ -21,6 +21,13 @@ class _Cart_productsState extends State<Cart_products> {
       "color":"Golden",
       "quantity":1,
     },
+    {"name":"Versace",
+      "picture":"assets/images/products/versace2.png",
+      "price":750,
+      "Size":"M",
+      "color":"Golden",
+      "quantity":1,
+    },
   ];
   @override
   Widget build(BuildContext context) {
@@ -59,14 +66,46 @@ class Single_cart_product extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
+        leading: new Image.asset(cart_prod_picture, width: 80.0, height: 80.0,),
         title: new Text(cart_prod_name),
         subtitle: new Column(
           children: <Widget>[
             new Row(
               children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: new Text("Size:"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: new Text(cart_prod_size, style: TextStyle(color: Colors.red),),
+                ),
+                new Padding(padding: const EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
+                child: new Text("Color:"),),
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: new Text(cart_prod_color, style: TextStyle(color: Colors.red),),
+                ),
 
               ],
-            )
+            ),
+             new Container(
+               alignment: Alignment.topLeft,
+               child: new Text("\$${cart_prod_price}",
+                 style: TextStyle(fontSize: 17.0,
+                   fontWeight: FontWeight.bold,
+                   color: Colors.red
+                 ),
+
+               ),
+             ),
+          ],
+        ),
+        trailing: new Column(
+          children: <Widget>[
+            new IconButton(icon: Icon(Icons.arrow_drop_up), onPressed: (){}),
+            new Text("$cart_prod_qty"),
+            new IconButton(icon: Icon(Icons.arrow_drop_down), onPressed: (){}),
           ],
         ),
       ),
