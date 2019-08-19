@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecom/components/cart_products.dart';
+
 class Cart extends StatefulWidget {
   @override
   _CartState createState() => _CartState();
@@ -12,7 +13,7 @@ class _CartState extends State<Cart> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.red,
-        title: Text('Cart'),
+        title: new Text('Cart'),
         actions: <Widget>[
           new IconButton(icon: Icon(Icons.search, color: Colors.white), onPressed: (){}),
         ],
@@ -24,7 +25,7 @@ class _CartState extends State<Cart> {
         child: Row(
           children: <Widget>[
             Expanded(child: ListTile(
-              title: new Text("TOtal :"),
+              title: new Text("Total :"),
               subtitle: new Text("\$230"),)),
 
             Expanded(
